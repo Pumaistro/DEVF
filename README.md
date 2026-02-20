@@ -28,8 +28,7 @@ Es una página personal con mi nombre, edad, estudios, experiencias y algunos da
 
 ## 📁 Archivos
 
-- `index.html` – El código de la página web.  
-- (Opcional) `mifoto.jpg` – Tu imagen de perfil.
+- `Pumaistro.html` – El código de la página web.  
 
 ## 🧠 Etiquetas HTML que aprendí
 
