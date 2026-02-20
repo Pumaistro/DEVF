@@ -57,4 +57,4 @@ Es una página personal con mi nombre, edad, estudios, experiencias y algunos da
 ## 💬 Créditos
 
 Creado por César Alexis Aranda Meléndez – 2026  
-Si tienes dudas o sugerencias, escríbeme a césar.aranda.2105@gmail.com
+Si tienes dudas o sugerencias, escríbeme a cesar.aranda.2105@gmail.com
