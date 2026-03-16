@@ -3,20 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi página personal | César Aranda</title>
+    <title>Portafolio | César Aranda</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <div class="contenedor">
+    <nav class="navbar-pro">
+        <div class="nav-logo">CA</div>
+        <ul class="nav-links">
+            <li><a href="#perfil">Perfil</a></li>
+            <li><a href="#experiencia">Experiencia</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+        </ul>
+    </nav>
+
+    <a href="https://wa.me/525532592416" class="btn-flotante" target="_blank">💬</a>
+
+    <div class="contenedor" id="perfil">
+        <div class="badge-generacion">10ma Gen</div>
+
         <header class="perfil-header">
             <h1>César Alexis Aranda Meléndez</h1>
-            <p class="subtitulo">Ingeniero en Sistemas Biomédicos | UNAM</p>
+            <p class="subtitulo">Ingeniería en Sistemas Biomédicos | UNAM</p>
         </header>
 
         <hr>
 
-        <div class="flex-secciones">
+        <div class="flex-secciones" id="experiencia">
             <section class="info-seccion">
                 <h3>Mis roles</h3>
                 <ul class="lista-personal">
@@ -36,23 +49,21 @@
             </section>
         </div>
 
-        <section class="habilidades-seccion">
-            <h3>Habilidades y Herramientas</h3>
+        <section class="habilidades-seccion" id="habilidades">
+            <h3>Habilidades</h3>
             <div class="habilidades-grid">
-                <span class="badge">Circuitos Biomedicos</span>
-                <span class="badge">Anatomía y Fisiologia</span>
+                <span class="badge">Circuitos</span>
+                <span class="badge">Anatomía</span>
                 <span class="badge">Git/GitHub</span>
-                <span class="badge">CSS Flexbox</span>
-                <span class="badge destacado-self">Liderazgo</span>
-                <span class="badge">Química</span>
+                <span class="badge">CSS Position</span>
+                <span class="badge">Liderazgo</span>
             </div>
         </section>
 
         <hr>
 
         <footer class="footer-flex">
-            <a href="mailto:cesar.aranda.2105@gmail.com" class="boton-contacto">Contactar por Correo</a>
-            <p class="copyright">César Alexis - 10ma Generación - 2026</p>
+            <p class="copyright">César Alexis Aranda Meléndez - La Décima Es Inevitable - 2026</p>
         </footer>
     </div>
 
