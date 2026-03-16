@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio | César Aranda</title>
+    <title>César Aranda | Sistemas Biomédicos</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <nav class="navbar-pro">
-        <div class="nav-logo">CA</div>
+    <nav class="navbar">
+        <div class="nav-logo">
+            <i class="fas fa-heartbeat"></i> CA.
+        </div>
         <ul class="nav-links">
             <li><a href="#perfil">Perfil</a></li>
             <li><a href="#experiencia">Experiencia</a></li>
@@ -17,55 +20,59 @@
         </ul>
     </nav>
 
-    <a href="https://wa.me/525532592416" class="btn-flotante" target="_blank">💬</a>
-
-    <div class="contenedor" id="perfil">
-        <div class="badge-generacion">10ma Gen</div>
+    <main class="contenedor" id="perfil">
+        
+        <span class="badge-generacion"><i class="fas fa-award"></i> 10ma Gen</span>
 
         <header class="perfil-header">
             <h1>César Alexis Aranda Meléndez</h1>
             <p class="subtitulo">Ingeniería en Sistemas Biomédicos | UNAM</p>
         </header>
 
-        <hr>
-
         <div class="flex-secciones" id="experiencia">
-            <section class="info-seccion">
-                <h3>Mis roles</h3>
-                <ul class="lista-personal">
+            
+            <section class="tarjeta-info">
+                <h3><i class="fas fa-user-tag"></i> Mis Roles</h3>
+                <ul class="lista-custom">
                     <li>Hijo y hermano</li>
                     <li>Maestro de química</li>
                     <li>Herrero</li>
                 </ul>
             </section>
 
-            <section class="info-seccion">
-                <h3>Hackatones</h3>
-                <ol class="lista-hackatones">
+            <section class="tarjeta-info">
+                <h3><i class="fas fa-laptop-code"></i> Hackatones</h3>
+                <ol class="lista-custom numerada">
                     <li>Salud Digital 2024</li>
-                    <li id="destacado">BioHack 2025</li>
+                    <li class="destacado">BioHack 2025 <i class="fas fa-star" style="color:#f39c12; font-size:0.8rem;"></i></li>
                     <li>Salud Digital 2025</li>
                 </ol>
             </section>
+
         </div>
 
-        <section class="habilidades-seccion" id="habilidades">
-            <h3>Habilidades</h3>
+        <section class="seccion-habilidades" id="habilidades">
+            <h3><i class="fas fa-tools"></i> Habilidades y Herramientas</h3>
             <div class="habilidades-grid">
-                <span class="badge">Circuitos</span>
-                <span class="badge">Anatomía</span>
-                <span class="badge">Git/GitHub</span>
-                <span class="badge">CSS Position</span>
-                <span class="badge">Liderazgo</span>
+                <span class="badge-skill"><i class="fas fa-microchip"></i> Circuitos</span>
+                <span class="badge-skill"><i class="fas fa-dna"></i> Anatomía</span>
+                <span class="badge-skill"><i class="fab fa-github"></i> Git/GitHub</span>
+                <span class="badge-skill"><i class="fab fa-css3-alt"></i> CSS Avanzado</span>
+                <span class="badge-skill pro-skill"><i class="fas fa-users"></i> Liderazgo</span>
+                <span class="badge-skill"><i class="fas fa-flask"></i> Química</span>
             </div>
         </section>
 
-        <hr>
-
-        <footer class="footer-flex">
-            <p class="copyright">César Alexis Aranda Meléndez - <em>La Décima Es Inevitable</em> - 2026</p>
+        <footer>
+            <p>César Alexis Aranda Meléndez | <strong>La Décima Es Inevitable</strong> | 2026</p>
         </footer>
-    </div>
+
+    </main>
+
+    <a href="https://wa.me/525532592416" class="btn-whatsapp" target="_blank" aria-label="Escríbeme por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="tooltip-wa">¡Contáctame!</span>
+    </a>
 
 </body>
 </html>

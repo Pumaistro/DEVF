@@ -1,169 +1,312 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400;500&display=swap');
+/* Importamos fuentes premium: Poppins para títulos y Roboto para lectura */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Roboto:wght@300;400;500&display=swap');
 
+/* --- VARIABLES DE COLOR (Paleta Corporativa) --- */
 :root {
-    --azul-la-maquina: #0033a0;
-    --rojo-pasion: #e31b23;
-    --blanco-cristal: rgba(255, 255, 255, 0.92);
-    --texto-oscuro: #1a1a1a;
-    --texto-suave: #555;
+    --azul-primario: #0033a0; /* Azul Máquina */
+    --rojo-acento: #e31b23;
+    --fondo-tarjeta: #f8f9fa;
+    --texto-oscuro: #2b2b2b;
+    --texto-claro: #6c757d;
+    --verde-wa: #25d366;
 }
 
+/* --- RESET BÁSICO --- */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en el navbar */
 }
 
 body {
     font-family: 'Roboto', sans-serif;
-    /* Fondo con un degradado más profesional para que la imagen luzca pero no distraiga */
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), 
+    color: var(--texto-oscuro);
+    /* Imagen de fondo con un overlay oscuro para que el contenido resalte */
+    background: linear-gradient(rgba(0, 15, 40, 0.75), rgba(0, 15, 40, 0.85)), 
                 url('https://instagram.fmex3-3.fna.fbcdn.net/v/t51.82787-15/566317643_18050218508671334_7171076696387850884_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ig_cache_key=Mzc0NzE3MTk4OTQ2MDAyMzgwMQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTc5NS5zZHIuQzMifQ%3D%3D&_nc_ohc=qZiN_1CpZSIQ7kNvwFt5TlL&_nc_oc=Adnt9p24IAGMDE4r0DupQM7Impcg6TNtMRmXVZZdZF7aKgoQ7rm5sDxi86V-8fqTdgJgmEfl13tv3yoEJBYyBY99&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fmex3-3.fna&_nc_gid=xNnmPf8wJsgHSxGLrYGqiw&_nc_ss=8&oh=00_Afy8H-ND5pGgCq2DueI93SPzLq7IG2Dvqkca53tmFv2uyA&oe=69BE14C7');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    color: var(--texto-oscuro);
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/* --- NAVBAR MEJORADO --- */
-.navbar-pro {
+/* --- NAVBAR (Fijo, blanco y elegante) --- */
+.navbar {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: var(--azul-la-maquina);
+    background-color: rgba(255, 255, 255, 0.98); /* Blanco casi sólido */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 10%;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    padding: 15px 8%;
+    backdrop-filter: blur(10px);
 }
 
 .nav-logo {
-    color: white;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
     font-size: 1.5rem;
-    border: 2px solid white;
-    padding: 2px 8px;
+    color: var(--azul-primario);
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 25px;
+    gap: 30px;
 }
 
 .nav-links a {
-    color: #e0e0e0; /* Gris muy claro para mejor contraste */
     text-decoration: none;
+    color: var(--texto-claro);
     font-weight: 500;
     font-size: 0.95rem;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover {
-    color: white;
-    border-bottom: 2px solid var(--rojo-pasion);
-}
-
-/* --- CONTENEDOR TIPO CARTA --- */
-.contenedor {
-    background-color: var(--blanco-cristal);
-    max-width: 850px;
-    margin: 60px auto;
-    padding: 50px;
-    border-radius: 24px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    position: relative;
-    border: 1px solid rgba(255,255,255,0.3);
-}
-
-/* Distintivo 10ma Gen mejorado */
-.badge-generacion {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: var(--rojo-pasion);
-    color: white;
-    padding: 6px 14px;
-    font-weight: bold;
-    font-size: 0.8rem;
-    border-radius: 50px;
-    text-transform: uppercase;
-}
-
-/* --- TIPOGRAFÍA Y SECCIONES --- */
-h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.8rem;
-    color: var(--azul-la-maquina);
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.subtitulo {
-    text-align: center;
-    color: var(--texto-suave);
-    font-weight: 300;
-    margin-bottom: 40px;
-    letter-spacing: 1px;
-}
-
-.flex-secciones {
-    display: flex;
-    justify-content: space-around;
-    gap: 40px; /* Más espacio para que no se amontone */
-    margin: 40px 0;
-    padding: 20px;
-    background: rgba(0, 51, 160, 0.03); /* Un fondo azul casi invisible para separar */
-    border-radius: 15px;
-}
-
-h3 {
-    font-family: 'Montserrat', sans-serif;
-    color: var(--azul-la-maquina);
-    margin-bottom: 15px;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-}
-
-.lista-personal, .lista-hackatones {
-    list-style-position: inside;
-    line-height: 1.8;
-}
-
-/* --- HABILIDADES (Badges) --- */
-.habilidades-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 20px;
-}
-
-.badge {
-    background-color: white;
-    color: var(--azul-la-maquina);
-    border: 2px solid var(--azul-la-maquina);
-    padding: 8px 18px;
-    border-radius: 50px;
-    font-weight: 500;
-    font-size: 0.85rem;
     transition: all 0.3s;
 }
 
-.badge:hover {
-    background-color: var(--azul-la-maquina);
-    color: white;
-    transform: translateY(-3px);
+.nav-links a:hover {
+    color: var(--azul-primario);
 }
 
-/* Footer con estilo */
-.footer-flex {
-    margin-top: 40px;
+/* --- CONTENEDOR PRINCIPAL (Glassmorphism) --- */
+.contenedor {
+    background: rgba(255, 255, 255, 0.95);
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 60px;
+    border-radius: 24px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+    position: relative;
+    border: 1px solid rgba(255,255,255,0.4);
+}
+
+/* Etiqueta 10ma Gen */
+.badge-generacion {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background: linear-gradient(135deg, var(--rojo-acento), #ff4757);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.85rem;
+    box-shadow: 0 5px 15px rgba(227, 27, 35, 0.4);
+}
+
+/* --- CABECERA --- */
+.perfil-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.8rem;
+    color: var(--azul-primario);
+    line-height: 1.2;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+}
+
+.subtitulo {
+    color: var(--texto-claro);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* --- TARJETAS FLEXBOX (Experiencia y Roles) --- */
+.flex-secciones {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.tarjeta-info {
+    flex: 1;
+    background-color: var(--fondo-tarjeta);
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid #eef2f5;
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-info:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+h3 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--azul-primario);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.lista-custom {
+    list-style: none;
+    line-height: 2;
+    color: var(--texto-oscuro);
+}
+
+.lista-custom li {
+    position: relative;
+    padding-left: 20px;
+}
+
+.lista-custom li::before {
+    content: "•";
+    color: var(--rojo-acento);
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+.destacado {
+    font-weight: bold;
+    color: var(--azul-primario);
+}
+
+/* --- HABILIDADES (Grid System) --- */
+.seccion-habilidades {
+    margin-top: 20px;
+}
+
+.habilidades-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.badge-skill {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--texto-oscuro);
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: default;
+}
+
+.badge-skill:hover {
+    border-color: var(--azul-primario);
+    color: var(--azul-primario);
+    box-shadow: 0 5px 15px rgba(0, 51, 160, 0.1);
+}
+
+.pro-skill {
+    background-color: rgba(227, 27, 35, 0.05);
+    border-color: var(--rojo-acento);
+    color: var(--rojo-acento);
+}
+
+/* --- FOOTER --- */
+footer {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
     text-align: center;
     font-size: 0.85rem;
-    color: var(--texto-suave);
-    border-top: 1px solid #eee;
-    padding-top: 20px;
+    color: var(--texto-claro);
+}
+
+/* --- WHATSAPP BOTÓN PREMIUM --- */
+.btn-whatsapp {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--verde-wa);
+    color: white;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    text-decoration: none;
+    z-index: 2000;
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-whatsapp:hover {
+    transform: scale(1.15) rotate(-10deg);
+    background-color: #20ba5a;
+}
+
+.tooltip-wa {
+    position: absolute;
+    right: 85px;
+    background: white;
+    color: #333;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    white-space: nowrap;
+}
+
+.btn-whatsapp:hover .tooltip-wa {
+    opacity: 1;
+    right: 95px;
+}
+
+/* --- RESPONSIVE DESIGN (Para Celulares) --- */
+@media (max-width: 768px) {
+    .contenedor {
+        margin: 20px;
+        padding: 40px 25px;
+    }
+    
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .flex-secciones {
+        flex-direction: column;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .badge-generacion {
+        top: 15px;
+        right: 15px;
+        font-size: 0.75rem;
+    }
+
+    .btn-whatsapp {
+        bottom: 20px;
+        right: 20px;
+        width: 55px;
+        height: 55px;
+        font-size: 30px;
+    }
 }
