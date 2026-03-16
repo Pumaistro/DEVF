@@ -1,62 +1,47 @@
-<!-- Esto es un comentario: no se ve en la página, solo sirve para explicar -->
-
-<!-- Le decimos al navegador que usamos HTML5 (la versión más reciente) -->
 <!DOCTYPE html>
-
-<!-- Aquí empieza la página web -->
-<html>
-
-<!-- En el <head> ponemos información que no se ve, pero es importante -->
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi página personal</title>
-    
+    <title>Mi página personal | César Aranda</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
-<!-- En el <body> va todo lo que SÍ se ve en la pantalla -->
 <body>
 
-    <!-- Este div es el contenedor que creamos en CSS para que el texto tenga fondo blanco semitransparente -->
     <div class="contenedor">
+        <header class="perfil-header">
+            <h1>César Alexis Aranda Meléndez</h1>
+            <h2>20 años, estudiante de la UNAM</h2>
+            <p>Estudio Ingeniería en Sistemas Biomédicos, soy de la décima generación.</p>
+        </header>
 
-        <!-- Los títulos: <h1> es el más grande, <h2> un poco más pequeño -->
-        <h1>César Alexis Aranda Meléndez</h1>
-        <h2>20 años, estudiante de la UNAM</h2>
-
-        <!-- Los párrafos se hacen con <p> -->
-        <p>Estudio Ingeniería en Sistemas Biomédicos, soy de la décima generación.</p>
-
-        <!-- Línea horizontal para separar secciones -->
         <hr>
 
-        <!-- Lista con viñetas (puntos) -->
-        <h3>Mis roles</h3>
-        <ul>
-            <li>Soy hijo de un barrendero y de una ama de casa</li>
-            <li>Soy hermano de una odontologa y de una enfermera</li>
-            <li>Soy novio de una futura Ingeniera en Sistemas Biomédicos</li>
-            <li>Soy tío de 2 niños y 1 niña super inteligentes</li>
-            <li>Soy herrero desde la secundaria</li>
-            <li>Soy maestro de química para jovenes de secundaria</li>
-        </ul>
+        <section class="info-seccion">
+            <h3>Mis roles</h3>
+            <ul class="lista-personal">
+                <li>Hijo de un barrendero y de una ama de casa</li>
+                <li>Hermano de una odontóloga y de una enfermera</li>
+                <li>Novio de una futura Ingeniera en Sistemas Biomédicos</li>
+                <li>Herrero desde la secundaria</li>
+                <li>Maestro de química para jóvenes</li>
+            </ul>
+        </section>
 
-        <!-- Lista numerada -->
-        <h3>Hackatones en los que participé</h3>
-        <ol>
-            <li>Hackathon 1er Congreso de Salud Digital FacMed - FI 2024</li>
-            <li>Hackathon "1er BioHack" Tec de Monterrey CCM 2025</li>
-            <li>Hackathon 2do Congreso de Sakud Digital FacMed - FI 2025</li>
-        </ol>
+        <section class="info-seccion">
+            <h3>Hackatones en los que participé</h3>
+            <ol class="lista-hackatones">
+                <li>Hackathon 1er Congreso de Salud Digital FacMed - FI 2024</li>
+                <li id="destacado">Hackathon "1er BioHack" Tec de Monterrey CCM 2025</li>
+                <li>Hackathon 2do Congreso de Salud Digital FacMed - FI 2025</li>
+            </ol>
+        </section>
 
-        <!-- Enlace a un correo electrónico -->
         <p>Mi correo: <a href="mailto:cesar.aranda.2105@gmail.com">cesar.aranda.2105@gmail.com</a></p>
 
-        <!-- Pie de página -->
         <hr>
         <p class="footer">Hecho con 💙 por César Alexis - 2026</p>
-    </div> <!-- Cierra el contenedor -->
+    </div>
 
 </body>
 </html>
