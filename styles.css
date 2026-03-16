@@ -1,4 +1,6 @@
-/* 1. Reset Universal: El mejor amigo del desarrollador */
+/* Importamos una fuente moderna: Montserrat para títulos y Roboto para texto */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,60 +8,103 @@
 }
 
 body {
-    /* Imagen de fondo de Cruz Azul */
-    background-image: url('https://instagram.fmex3-3.fna.fbcdn.net/v/t51.82787-15/566317643_18050218508671334_7171076696387850884_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ig_cache_key=Mzc0NzE3MTk4OTQ2MDAyMzgwMQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTc5NS5zZHIuQzMifQ%3D%3D&_nc_ohc=qZiN_1CpZSIQ7kNvwFt5TlL&_nc_oc=Adnt9p24IAGMDE4r0DupQM7Impcg6TNtMRmXVZZdZF7aKgoQ7rm5sDxi86V-8fqTdgJgmEfl13tv3yoEJBYyBY99&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fmex3-3.fna&_nc_gid=xNnmPf8wJsgHSxGLrYGqiw&_nc_ss=8&oh=00_Afy8H-ND5pGgCq2DueI93SPzLq7IG2Dvqkca53tmFv2uyA&oe=69BE14C7');
+    /* Mantenemos tu imagen, pero añadimos un degradado oscuro encima para que el texto resalte más */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('https://instagram.fmex3-3.fna.fbcdn.net/v/t51.82787-15/566317643_18050218508671334_7171076696387850884_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ig_cache_key=Mzc0NzE3MTk4OTQ2MDAyMzgwMQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTc5NS5zZHIuQzMifQ%3D%3D&_nc_ohc=qZiN_1CpZSIQ7kNvwFt5TlL&_nc_oc=Adnt9p24IAGMDE4r0DupQM7Impcg6TNtMRmXVZZdZF7aKgoQ7rm5sDxi86V-8fqTdgJgmEfl13tv3yoEJBYyBY99&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fmex3-3.fna&_nc_gid=xNnmPf8wJsgHSxGLrYGqiw&_nc_ss=8&oh=00_Afy8H-ND5pGgCq2DueI93SPzLq7IG2Dvqkca53tmFv2uyA&oe=69BE14C7');
     background-size: cover;
-    background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
-    padding: 50px 20px; /* Espacio para que el contenedor no pegue arriba */
+    font-family: 'Roboto', sans-serif; /* Fuente principal para lectura */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
 }
 
-/* 2. Contenedor Principal */
 .contenedor {
-    background-color: rgba(255, 255, 255, 0.85); /* Un poco más de opacidad para leer mejor */
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra para darle profundidad */
+    background-color: rgba(255, 255, 255, 0.95); /* Blanco casi sólido para máxima lectura */
+    max-width: 700px;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    border-top: 8px solid #0033a0; /* Franja azul arriba como detalle */
 }
 
-/* 3. Estilos de Texto */
+/* --- Títulos y Tamaños --- */
+
 h1 {
-    color: #0033a0; /* El azul clásico */
-    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem; /* Tamaño grande para tu nombre */
+    color: #0033a0;
+    text-align: center; /* Alineación centrada */
+    text-transform: uppercase; /* Todo en mayúsculas para impacto */
+    letter-spacing: 2px;
+    margin-bottom: 5px;
 }
 
 h2 {
-    color: #555;
-    font-weight: normal;
-    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: #666;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 300;
 }
 
 h3 {
-    margin-top: 25px;
-    color: #333;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    color: #0033a0;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+/* --- Párrafos y Listas --- */
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.8; /* Más espacio entre líneas para que no canse la vista */
+    text-align: justify; /* Texto justificado para que se vea ordenado */
+    margin-bottom: 15px;
 }
 
 ul, ol {
-    margin-left: 20px;
-    line-height: 1.6; /* Más espacio entre líneas para que respire el texto */
+    margin-left: 30px;
+    font-size: 1.05rem;
+    line-height: 2;
 }
 
-hr {
-    margin: 25px 0;
-    border: 0;
-    border-top: 1px solid #ccc;
+li::marker {
+    color: #0033a0; /* Los puntos de la lista ahora son azules */
+    font-weight: bold;
 }
+
+/* --- Enlaces y Pie --- */
 
 a {
-    color: #0033a0;
+    color: #e31b23; /* Rojo de acento para el correo (como el escudo) */
+    font-weight: bold;
     text-decoration: none;
+    transition: 0.3s;
 }
 
 a:hover {
+    color: #0033a0;
     text-decoration: underline;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 30px 0;
+}
+
+.footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #888;
 }
