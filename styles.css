@@ -1,104 +1,169 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400;500&display=swap');
 
-/* --- CONFIGURACIÓN GLOBAL --- */
+:root {
+    --azul-la-maquina: #0033a0;
+    --rojo-pasion: #e31b23;
+    --blanco-cristal: rgba(255, 255, 255, 0.92);
+    --texto-oscuro: #1a1a1a;
+    --texto-suave: #555;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
-    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+    /* Fondo con un degradado más profesional para que la imagen luzca pero no distraiga */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), 
                 url('https://instagram.fmex3-3.fna.fbcdn.net/v/t51.82787-15/566317643_18050218508671334_7171076696387850884_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ig_cache_key=Mzc0NzE3MTk4OTQ2MDAyMzgwMQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTc5NS5zZHIuQzMifQ%3D%3D&_nc_ohc=qZiN_1CpZSIQ7kNvwFt5TlL&_nc_oc=Adnt9p24IAGMDE4r0DupQM7Impcg6TNtMRmXVZZdZF7aKgoQ7rm5sDxi86V-8fqTdgJgmEfl13tv3yoEJBYyBY99&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fmex3-3.fna&_nc_gid=xNnmPf8wJsgHSxGLrYGqiw&_nc_ss=8&oh=00_Afy8H-ND5pGgCq2DueI93SPzLq7IG2Dvqkca53tmFv2uyA&oe=69BE14C7');
     background-size: cover;
     background-attachment: fixed;
-    margin: 0;
-    padding-top: 0;
+    background-position: center;
+    color: var(--texto-oscuro);
+    min-height: 100vh;
 }
 
-/* --- 1. POSITION STICKY (Navbar) --- */
+/* --- NAVBAR MEJORADO --- */
 .navbar-pro {
     position: sticky;
-    top: 0; /* Se queda pegado al llegar al borde superior */
-    z-index: 1000; /* Asegura que pase por encima de todo al hacer scroll */
-    background-color: #0033a0; /* Azul Cruz Azul */
+    top: 0;
+    z-index: 1000;
+    background-color: var(--azul-la-maquina);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 50px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    padding: 1rem 10%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.nav-logo {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    border: 2px solid white;
+    padding: 2px 8px;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 20px;
+    gap: 25px;
 }
 
 .nav-links a {
-    color: white;
+    color: #e0e0e0; /* Gris muy claro para mejor contraste */
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s;
 }
 
-/* --- 2. POSITION FIXED (Botón de Chat) --- */
-.btn-flotante {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #25d366; /* Verde WhatsApp */
+.nav-links a:hover {
     color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    text-decoration: none;
-    z-index: 999;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border-bottom: 2px solid var(--rojo-pasion);
 }
 
-/* --- 3. POSITION RELATIVE Y ABSOLUTE (Contenedor y Badge) --- */
+/* --- CONTENEDOR TIPO CARTA --- */
 .contenedor {
-    position: relative; /* ANCLA: Necesario para que el hijo absoluto no se escape */
-    background-color: rgba(255, 255, 255, 0.96);
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    background-color: var(--blanco-cristal);
+    max-width: 850px;
+    margin: 60px auto;
+    padding: 50px;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    position: relative;
+    border: 1px solid rgba(255,255,255,0.3);
 }
 
+/* Distintivo 10ma Gen mejorado */
 .badge-generacion {
     position: absolute;
-    top: -10px;
-    right: -10px;
-    background-color: #e31b23; /* Rojo de acento */
+    top: 20px;
+    right: 20px;
+    background-color: var(--rojo-pasion);
     color: white;
-    padding: 10px 20px;
+    padding: 6px 14px;
     font-weight: bold;
-    border-radius: 5px;
-    transform: rotate(5deg); /* Un toque de diseño */
-    box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+    font-size: 0.8rem;
+    border-radius: 50px;
+    text-transform: uppercase;
 }
 
-/* --- REUTILIZANDO FLEXBOX DE ACTIVIDADES ANTERIORES --- */
+/* --- TIPOGRAFÍA Y SECCIONES --- */
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8rem;
+    color: var(--azul-la-maquina);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.subtitulo {
+    text-align: center;
+    color: var(--texto-suave);
+    font-weight: 300;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
 .flex-secciones {
     display: flex;
     justify-content: space-around;
-    gap: 20px;
-    margin: 20px 0;
+    gap: 40px; /* Más espacio para que no se amontone */
+    margin: 40px 0;
+    padding: 20px;
+    background: rgba(0, 51, 160, 0.03); /* Un fondo azul casi invisible para separar */
+    border-radius: 15px;
 }
 
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--azul-la-maquina);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.lista-personal, .lista-hackatones {
+    list-style-position: inside;
+    line-height: 1.8;
+}
+
+/* --- HABILIDADES (Badges) --- */
 .habilidades-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 12px;
+    margin-top: 20px;
 }
 
 .badge {
-    background-color: #0033a0;
-    color: white;
-    padding: 5px 15px;
-    border-radius: 15px;
+    background-color: white;
+    color: var(--azul-la-maquina);
+    border: 2px solid var(--azul-la-maquina);
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    transition: all 0.3s;
 }
 
-h1 { color: #0033a0; text-align: center; }
+.badge:hover {
+    background-color: var(--azul-la-maquina);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Footer con estilo */
+.footer-flex {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--texto-suave);
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
