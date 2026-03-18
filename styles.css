@@ -1,44 +1,35 @@
-/* Importamos fuentes premium: Poppins para títulos y Roboto para lectura */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Roboto:wght@300;400;500&display=swap');
 
-/* --- VARIABLES DE COLOR (Paleta Corporativa) --- */
 :root {
-    --azul-primario: #0033a0; /* Azul Máquina */
+    --azul-primario: #0033a0; 
     --rojo-acento: #e31b23;
-    --fondo-tarjeta: #f8f9fa;
+    --fondo-tarjeta: #ffffff;
     --texto-oscuro: #2b2b2b;
     --texto-claro: #6c757d;
-    --verde-wa: #25d366;
 }
 
-/* --- RESET BÁSICO --- */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en el navbar */
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* Desplazamiento suave para los links del Navbar */
+html { scroll-behavior: smooth; }
 
 body {
     font-family: 'Roboto', sans-serif;
     color: var(--texto-oscuro);
-    /* Imagen de fondo con un overlay oscuro para que el contenido resalte */
     background: linear-gradient(rgba(0, 15, 40, 0.75), rgba(0, 15, 40, 0.85)), 
                 url('https://instagram.fmex3-3.fna.fbcdn.net/v/t51.82787-15/566317643_18050218508671334_7171076696387850884_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ig_cache_key=Mzc0NzE3MTk4OTQ2MDAyMzgwMQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTc5NS5zZHIuQzMifQ%3D%3D&_nc_ohc=qZiN_1CpZSIQ7kNvwFt5TlL&_nc_oc=Adnt9p24IAGMDE4r0DupQM7Impcg6TNtMRmXVZZdZF7aKgoQ7rm5sDxi86V-8fqTdgJgmEfl13tv3yoEJBYyBY99&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fmex3-3.fna&_nc_gid=xNnmPf8wJsgHSxGLrYGqiw&_nc_ss=8&oh=00_Afy8H-ND5pGgCq2DueI93SPzLq7IG2Dvqkca53tmFv2uyA&oe=69BE14C7');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
 }
 
-/* --- NAVBAR (Fijo, blanco y elegante) --- */
+/* --- NAVBAR --- */
 .navbar {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background-color: rgba(255, 255, 255, 0.98); /* Blanco casi sólido */
+    background-color: rgba(255, 255, 255, 0.95);
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     display: flex;
     justify-content: space-between;
@@ -50,41 +41,86 @@ body {
 .nav-logo {
     font-family: 'Poppins', sans-serif;
     font-weight: 800;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     color: var(--azul-primario);
+    text-decoration: none;
+    transition: transform 0.3s;
 }
 
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-}
+.nav-logo:hover { transform: scale(1.05); }
+
+.nav-links { display: flex; list-style: none; gap: 30px; }
 
 .nav-links a {
     text-decoration: none;
     color: var(--texto-claro);
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: all 0.3s;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
-.nav-links a:hover {
-    color: var(--azul-primario);
+.nav-links a:hover { color: var(--azul-primario); border-bottom: 2px solid var(--rojo-acento); }
+
+/* --- DOCK DE REDES SOCIALES --- */
+.social-dock {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 2000;
 }
 
-/* --- CONTENEDOR PRINCIPAL (Glassmorphism) --- */
-.contenedor {
-    background: rgba(255, 255, 255, 0.95);
-    max-width: 900px;
-    margin: 60px auto;
-    padding: 60px;
-    border-radius: 24px;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+.social-btn {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     position: relative;
-    border: 1px solid rgba(255,255,255,0.4);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Etiqueta 10ma Gen */
+.fb { background-color: #1877F2; }
+.ig { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+.wa { background-color: #25d366; }
+
+.social-btn:hover { transform: scale(1.15) translateX(-5px); }
+
+.social-tooltip {
+    position: absolute;
+    right: 70px;
+    background-color: white;
+    color: #333;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.social-btn:hover .social-tooltip { opacity: 1; right: 80px; }
+
+/* --- CONTENEDOR PRINCIPAL --- */
+.contenedor {
+    background: rgba(255, 255, 255, 0.96);
+    max-width: 950px;
+    margin: 50px auto;
+    padding: 60px;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+    position: relative;
+}
+
 .badge-generacion {
     position: absolute;
     top: 25px;
@@ -96,217 +132,103 @@ body {
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     font-size: 0.85rem;
-    box-shadow: 0 5px 15px rgba(227, 27, 35, 0.4);
 }
 
-/* --- CABECERA --- */
-.perfil-header {
-    text-align: center;
-    margin-bottom: 40px;
-}
+/* --- TIPOGRAFÍA Y SECCIONES --- */
+.perfil-header, .seccion-header { text-align: center; margin-bottom: 40px; }
+.seccion-principal { padding-top: 40px; scroll-margin-top: 110px; } 
 
-h1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 2.8rem;
-    color: var(--azul-primario);
-    line-height: 1.2;
-    margin-bottom: 10px;
-    letter-spacing: -1px;
-}
+h1 { font-family: 'Poppins', sans-serif; font-size: 2.8rem; color: var(--azul-primario); margin-bottom: 10px; }
+h2 { font-family: 'Poppins', sans-serif; font-size: 2.2rem; color: var(--azul-primario); }
+.subtitulo { color: var(--texto-claro); font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px; }
 
-.subtitulo {
-    color: var(--texto-claro);
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-/* --- TARJETAS FLEXBOX (Experiencia y Roles) --- */
-.flex-secciones {
-    display: flex;
+/* --- SISTEMA DE GRIDS ASIMÉTRICOS (Estilo Premium) --- */
+.grid-perfil {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr; /* 60% para el texto, 40% para LinkedIn */
     gap: 30px;
-    margin-bottom: 40px;
 }
 
+.grid-experiencia {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr; /* 40% para Hackatones, 60% para el texto */
+    gap: 30px;
+}
+
+.grid-habilidades {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Aquí sí dejamos 50/50 porque miden parecido */
+    gap: 30px;
+}
+
+/* --- TARJETAS CON CENTRADO VERTICAL --- */
 .tarjeta-info {
-    flex: 1;
     background-color: var(--fondo-tarjeta);
-    padding: 30px;
+    padding: 35px 30px;
     border-radius: 16px;
     border: 1px solid #eef2f5;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
     transition: transform 0.3s ease;
-}
-
-.tarjeta-info:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-}
-
-h3 {
-    font-family: 'Poppins', sans-serif;
-    color: var(--azul-primario);
-    margin-bottom: 20px;
-    font-size: 1.3rem;
     display: flex;
-    align-items: center;
-    gap: 10px;
+    flex-direction: column;
+    justify-content: center; 
 }
 
-.lista-custom {
-    list-style: none;
-    line-height: 2;
-    color: var(--texto-oscuro);
-}
+.tarjeta-info:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
 
-.lista-custom li {
-    position: relative;
-    padding-left: 20px;
-}
+h3 { font-family: 'Poppins', sans-serif; color: var(--azul-primario); margin-bottom: 20px; font-size: 1.3rem; }
+.texto-historia { line-height: 1.8; color: #555; text-align: justify; }
 
-.lista-custom li::before {
-    content: "•";
-    color: var(--rojo-acento);
-    font-weight: bold;
-    font-size: 1.2rem;
-    position: absolute;
-    left: 0;
-    top: -2px;
-}
-
-.destacado {
-    font-weight: bold;
-    color: var(--azul-primario);
-}
-
-/* --- HABILIDADES (Grid System) --- */
-.seccion-habilidades {
-    margin-top: 20px;
-}
-
-.habilidades-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.badge-skill {
-    background: white;
-    border: 1px solid #ddd;
-    padding: 12px 15px;
-    border-radius: 12px;
-    text-align: center;
-    font-weight: 500;
-    font-size: 0.9rem;
-    color: var(--texto-oscuro);
-    transition: all 0.3s;
+/* En la tarjeta de LinkedIn también agregamos Flexbox vertical */
+.tarjeta-linkedin { 
+    background-color: #0a66c2; 
+    padding: 25px; 
+    border-radius: 16px; 
+    transition: transform 0.3s ease; 
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    cursor: default;
+    flex-direction: column;
+    justify-content: center; 
 }
+.tarjeta-linkedin:hover { transform: translateY(-5px); }
+.linkedin-card { background: white; border-radius: 10px; overflow: hidden; border: 1px solid #ddd; }
+.linkedin-banner { height: 70px; background-color: #a0b4b7; }
+.linkedin-content { padding: 15px; position: relative; text-align: center; }
+.linkedin-foto { width: 80px; height: 80px; border-radius: 50%; border: 4px solid white; margin-top: -55px; background: white; }
+.linkedin-content h4 { font-size: 1.1rem; color: #000; margin-top: 10px; }
+.linkedin-headline { font-size: 0.85rem; color: #666; margin: 5px 0 15px 0; }
+.linkedin-location { font-size: 0.8rem; color: #888; margin-bottom: 20px; }
+.linkedin-btn { display: inline-block; background-color: #0a66c2; color: white; padding: 8px 25px; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 0.9rem; transition: 0.3s; }
+.linkedin-btn:hover { background-color: #004182; }
 
-.badge-skill:hover {
-    border-color: var(--azul-primario);
-    color: var(--azul-primario);
-    box-shadow: 0 5px 15px rgba(0, 51, 160, 0.1);
-}
+/* --- LISTAS --- */
+.lista-custom { list-style: none; line-height: 2; }
+.lista-custom li { position: relative; padding-left: 20px; margin-bottom: 10px;}
+.lista-custom.numerada { list-style-type: decimal; list-style-position: inside; }
+.lista-custom.numerada li { padding-left: 0; }
 
-.pro-skill {
-    background-color: rgba(227, 27, 35, 0.05);
-    border-color: var(--rojo-acento);
-    color: var(--rojo-acento);
-}
+/* --- AJUSTE DE LA ESTRELLA Y EL TEXTO DESTACADO --- */
+.destacado { font-weight: 800; color: var(--azul-primario); }
+.estrella-azul { color: var(--azul-primario); margin-left: 5px; font-size: 1.1rem; }
 
-/* --- FOOTER --- */
-footer {
-    margin-top: 50px;
-    padding-top: 20px;
-    border-top: 1px solid #eee;
-    text-align: center;
-    font-size: 0.85rem;
-    color: var(--texto-claro);
-}
+/* --- HABILIDADES --- */
+.habilidades-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 15px; }
+.badge-skill { background: white; border: 1px solid #ddd; padding: 10px; border-radius: 10px; text-align: center; font-weight: 500; font-size: 0.85rem; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 8px; cursor: default; }
+.badge-skill:hover { border-color: var(--azul-primario); color: var(--azul-primario); transform: translateY(-3px); }
 
-/* --- WHATSAPP BOTÓN PREMIUM --- */
-.btn-whatsapp {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: var(--verde-wa);
-    color: white;
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 35px;
-    text-decoration: none;
-    z-index: 2000;
-    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
+.tarjeta-liderazgo { border-left: 5px solid var(--rojo-acento); }
 
-.btn-whatsapp:hover {
-    transform: scale(1.15) rotate(-10deg);
-    background-color: #20ba5a;
-}
+.separador { margin: 50px 0; border: 0; border-top: 1px solid #eee; }
 
-.tooltip-wa {
-    position: absolute;
-    right: 85px;
-    background: white;
-    color: #333;
-    padding: 8px 16px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: bold;
-    opacity: 0;
-    pointer-events: none;
-    transition: 0.3s;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    white-space: nowrap;
-}
+footer { text-align: center; font-size: 0.9rem; color: var(--texto-claro); margin-top: 30px; }
 
-.btn-whatsapp:hover .tooltip-wa {
-    opacity: 1;
-    right: 95px;
-}
-
-/* --- RESPONSIVE DESIGN (Para Celulares) --- */
+/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-    .contenedor {
-        margin: 20px;
-        padding: 40px 25px;
-    }
-    
-    .navbar {
-        flex-direction: column;
-        padding: 15px;
-        gap: 15px;
-    }
-
-    .flex-secciones {
-        flex-direction: column;
-    }
-
-    h1 {
-        font-size: 2.2rem;
-    }
-
-    .badge-generacion {
-        top: 15px;
-        right: 15px;
-        font-size: 0.75rem;
-    }
-
-    .btn-whatsapp {
-        bottom: 20px;
-        right: 20px;
-        width: 55px;
-        height: 55px;
-        font-size: 30px;
-    }
+    .contenedor { margin: 20px; padding: 40px 20px; }
+    .navbar { flex-direction: column; gap: 15px; padding: 15px; }
+    .grid-perfil, .grid-experiencia, .grid-habilidades { grid-template-columns: 1fr; }
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    .social-dock { top: auto; bottom: 15px; right: 50%; transform: translateX(50%); flex-direction: row; }
+    .social-tooltip { display: none; }
+    .social-btn { width: 50px; height: 50px; font-size: 22px; }
 }
